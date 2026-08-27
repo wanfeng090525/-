@@ -1,0 +1,89 @@
+# VLC for Android —— GitHub Actions 自动构建 APK
+# 触发:push / PR / 手动(workflow_dispatch)
+# 说明:vlc-android 仓库未自带 gradlew(wrapper),故用 gradle/actions/setup-gradle 指定版本安装 Gradle。
+#       默认同时构建 Debug + Release APK(快速,拉预编译 LibVLC/Medialibrary);
+#       勾选 Dev 变体则本地完整编译 libvlc(需额外 Linux 原生工具链,耗时长)。
+name: Build VLC-Android APK
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      build_dev:
+        description: '改为 Dev 变体(本地编译 libvlc,耗时长)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  build-apk:
+    name: Build APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout 源码
+        uses: actions/checkout@v4
+
+      - name: 安装 JDK 17(AGP 9.1 要求)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: 安装 Android SDK + 构建工具
+        uses: android-actions/setup-android@v3
+
+      # vlc-android 无 gradle wrapper,显式安装 Gradle 9.3.1(AGP 9.1 最低要求)
+      - name: 安装 Gradle 9.3.1
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.3.1'
+
+      # build.gradle 会无条件读取 local.properties,缺失会直接报错,必须先生成
+      # assembleDebug 仅需 sdk.dir;如需本地编译原生库(Dev)再安装 NDK 并配置 ndkPath
+      - name: 生成 local.properties(CI 必需)
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          echo "# VLC3 需要 NDK 21(支持 minSdk 17);VLC4 用 NDK 28" >> local.properties
+          # echo "android.ndkPath=$ANDROID_HOME/ndk/21.4.7075529" >> local.properties
+
+      - name: 接受 SDK 许可
+        run: yes | sdkmanager --licenses || true
+
+      - name: 执行 Gradle 构建(构建任务可按需调节)
+        # 默认同时构建 Debug + Release;勾选了 Dev 则只跑 Dev 变体
+        run: |
+          if [ "${{ github.event.inputs.build_dev }}" = "true" ]; then
+            TASKS="assembleDev"
+            echo "构建 Dev 变体(本地编译 libvlc)"
+          else
+            TASKS="assembleDebug assembleRelease"
+            echo "同时构建 Debug + Release"
+          fi
+          gradle $TASKS --no-daemon --stacktrace
+
+      - name: 上传 Debug APK 产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: vlc-android-apk-debug
+          path: |
+            **/build/outputs/apk/debug/**/*.apk
+          if-no-files-found: ignore
+
+      - name: 上传 Release APK 产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: vlc-android-apk-release
+          path: |
+            **/build/outputs/apk/release/**/*.apk
+          if-no-files-found: ignore
+
+      - name: 上传其余 APK 产物(Dev 等)
+        uses: actions/upload-artifact@v4
+        with:
+          name: vlc-android-apk-other
+          path: |
+            **/build/outputs/apk/**/*.apk
+          if-no-files-found: ignore

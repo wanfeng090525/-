@@ -1,0 +1,13 @@
+# ============================================================
+# vlc-android 构建必需的 local.properties 模板
+# build.gradle 会【无条件】读取该文件,缺失会直接构建失败。
+# 复制为 local.properties 后,把两个路径改成你本机真实路径。
+# 注意:local.properties 已被 .gitignore 忽略,不会被提交,仅本机生效。
+# ============================================================
+
+# Android SDK 目录(必填)
+sdk.dir=/opt/android-sdk
+
+# Android NDK 路径(选填,仅本地编译原生库/Dev 变体时需要)
+# VLC3 必须用 NDK 21(4.0 用 NDK 28),见 build.gradle 的默认逻辑
+android.ndkPath=/opt/android-ndk
