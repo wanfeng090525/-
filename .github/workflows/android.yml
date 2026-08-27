@@ -6,9 +6,6 @@
 name: Build VLC-Android APK
 
 on:
-  push:
-    branches: [ "**" ]
-  pull_request:
   workflow_dispatch:
     inputs:
       build_dev:
