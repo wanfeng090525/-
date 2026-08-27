@@ -60,17 +60,27 @@ jobs:
             https://code.videolan.org/videolan/libvlcjni.git libvlcjni
           git -C libvlcjni reset --hard 81bb02ba48dcad32550e0626139a387b3c30af04
 
+      - name: 还原签名 keystore(来自 GitHub Secrets)
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > "$RUNNER_TEMP/vlc-release.keystore"
+          ls -l "$RUNNER_TEMP/vlc-release.keystore"
+
       - name: 执行 Gradle 构建(构建任务可按需调节)
-        # 默认同时构建 Debug + Release;勾选了 Dev 则只跑 Dev 变体
+        # 默认构建 Debug + 签名 Release(SignedRelease);勾选 Dev 则跑 Dev 变体
+        env:
+          PASSWORD_KEYSTORE: ${{ secrets.KEYSTORE_PASSWORD }}
         run: |
           if [ "${{ github.event.inputs.build_dev }}" = "true" ]; then
             TASKS="assembleDev"
             echo "构建 Dev 变体(本地编译 libvlc)"
           else
-            TASKS="assembleDebug assembleRelease"
-            echo "同时构建 Debug + Release"
+            TASKS="assembleDebug assembleSignedRelease"
+            echo "同时构建 Debug + 签名 Release"
           fi
-          gradle $TASKS --no-daemon --stacktrace
+          gradle $TASKS \
+            -PkeyStoreFile="$RUNNER_TEMP/vlc-release.keystore" \
+            -Pstorealias="${{ secrets.KEY_ALIAS }}" \
+            --no-daemon --stacktrace
 
       - name: 上传 Debug APK 产物
         uses: actions/upload-artifact@v4
@@ -80,11 +90,12 @@ jobs:
             **/build/outputs/apk/debug/**/*.apk
           if-no-files-found: ignore
 
-      - name: 上传 Release APK 产物
+      - name: 上传 签名 Release APK 产物
         uses: actions/upload-artifact@v4
         with:
           name: vlc-android-apk-release
           path: |
+            **/build/outputs/apk/signedRelease/**/*.apk
             **/build/outputs/apk/release/**/*.apk
           if-no-files-found: ignore
 
