@@ -17,6 +17,9 @@ on:
         default: false
         type: boolean
 
+permissions:
+  contents: write
+
 jobs:
   build-apk:
     name: Build APK
@@ -109,3 +112,19 @@ jobs:
             **/build/outputs/apk/**/*.apk
           if-no-files-found: ignore
           compression-level: 0
+
+      # 构建成功后自动把 APK 原文件发布到 GitHub Release
+      - name: 自动发布到 GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: vlc-android-build-${{ github.run_number }}
+          name: "VLC-Android 自动构建 #${{ github.run_number }}"
+          body: |
+            本次构建由 GitHub Actions 自动生成。
+            提交: `${{ github.sha }}`
+            Debug 与签名 Release 的安装包均已附上,直接下载对应 .apk 即可。
+          files: |
+            **/build/outputs/apk/**/*.apk
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
