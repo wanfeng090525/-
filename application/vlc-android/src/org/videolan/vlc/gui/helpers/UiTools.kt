@@ -1105,7 +1105,7 @@ fun BaseActivity.applyTheme() {
         return
     }
 
-    val string = settings.getString(KEY_APP_THEME, "-1")
+    val string = settings.getString(KEY_APP_THEME, "2")
     when (string) {
         "1" -> {
             window.setBackgroundDrawable(ContextCompat.getColor(this, R.color.white).toDrawable())
