@@ -863,6 +863,27 @@
         <item name="android:focusable">true</item>
     </style>
 
+    <!-- iOS Design System : native-looking controls -->
+    <style name="Button.VLC.iOS" parent="@style/Widget.MaterialComponents.Button">
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.0014</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+
+    <!-- iOS Switch : green on-state, gray thumb off-state -->
+    <style name="Widget.VLC.Switch.iOS" parent="@style/Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:textSize">17sp</item>
+        <item name="android:colorControlActivated">@color/iosGreenLight</item>
+        <item name="android:colorSwitchThumbNormal">@color/iosGray4Light</item>
+    </style>
+
     <style name="VLCCardView.NoShadow">
         <item name="cardElevation">0dp</item>
         <item name="strokeWidth">1dp</item>

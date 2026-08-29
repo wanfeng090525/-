@@ -35,7 +35,7 @@
 
         <org.videolan.vlc.gui.view.AutofitButton
                 android:id="@+id/settingsButton"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                style="@style/Button.VLC.iOS"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -55,7 +55,7 @@
 
         <org.videolan.vlc.gui.view.AutofitButton
                 android:id="@+id/aboutButton"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                style="@style/Button.VLC.iOS"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"

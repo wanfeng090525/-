@@ -231,4 +231,7 @@
     <color name="iosLabelDarkAlias">@color/iosLabelDark</color>
     <color name="iosSecondaryLabelDarkAlias">@color/iosSecondaryLabelDark</color>
     <color name="iosAccentDark">@color/iosBlueDark</color>
+
+    <!-- iOS tint used for tinted buttons (10% system blue) -->
+    <color name="iosAccentTint">#1A007AFF</color>
 </resources>
