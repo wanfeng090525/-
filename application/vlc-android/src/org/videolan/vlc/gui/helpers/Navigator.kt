@@ -98,7 +98,6 @@ class Navigator : NavigationBarView.OnItemSelectedListener, DefaultLifecycleObse
 
     private fun getNewFragment(id: Int): Fragment {
         return when (id) {
-            R.id.nav_audio -> AudioBrowserFragment()
             R.id.nav_directories -> MainBrowserFragment().apply {
                 arguments = bundleOf(EXTRA_FOR_ESPRESSO to forExpresso)
             }
@@ -149,7 +148,6 @@ class Navigator : NavigationBarView.OnItemSelectedListener, DefaultLifecycleObse
     }
 
     private fun getTag(id: Int) = when (id) {
-        R.id.nav_audio -> ID_AUDIO
         R.id.nav_directories -> ID_DIRECTORIES
         else -> ID_VIDEO
     }

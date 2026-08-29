@@ -39,16 +39,4 @@
                 android:targetClass="org.videolan.vlc.StartActivity" />
         <categories android:name="vlc.shortcut.category" />
     </shortcut>
-    <shortcut
-            android:shortcutId="audio"
-            android:enabled="false"
-            android:icon="@drawable/ic_shortcut_audio"
-            android:shortcutShortLabel="@string/audio"
-            android:shortcutLongLabel="@string/audio">
-        <intent
-                android:action="vlc.shortcut.audio"
-                android:targetPackage="org.videolan.vlc.debug"
-                android:targetClass="org.videolan.vlc.StartActivity" />
-        <categories android:name="vlc.shortcut.category" />
-    </shortcut>
 </shortcuts>

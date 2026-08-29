@@ -32,10 +32,6 @@
             android:title="@string/video"
             android:icon="@drawable/ic_video" />
     <item
-            android:id="@+id/nav_audio"
-            android:title="@string/audio"
-            android:icon="@drawable/ic_menu_audio" />
-    <item
             android:id="@+id/nav_directories"
             android:title="@string/browse"
             android:icon="@drawable/ic_folder" />
