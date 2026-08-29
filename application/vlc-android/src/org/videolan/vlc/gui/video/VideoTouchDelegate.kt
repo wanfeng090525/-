@@ -373,8 +373,8 @@ class VideoTouchDelegate(private val player: VideoPlayerActivity,
 
     private fun doVerticalTouchAction(y_changed: Float) {
         if (BuildConfig.DEBUG) Log.d(this::class.java.simpleName, "doVerticalTouchAction $y_changed // ${screenConfig.metrics.widthPixels} // ${3 * screenConfig.metrics.widthPixels / 7f} // $touchX")
-        val rightAction = touchX.toInt() > 4 * screenConfig.metrics.widthPixels / 7f
-        val leftAction = !rightAction && touchX.toInt() < 3 * screenConfig.metrics.widthPixels / 7f
+        val rightAction = touchX.toInt() > 5 * screenConfig.metrics.widthPixels / 8f
+        val leftAction = !rightAction && touchX.toInt() < 3 * screenConfig.metrics.widthPixels / 8f
         if (!leftAction && !rightAction) {
             // iOS-style gesture : vertical swipe in the neutral middle zone switches videos
             // (volume = right third, brightness = left third, middle = next/previous)

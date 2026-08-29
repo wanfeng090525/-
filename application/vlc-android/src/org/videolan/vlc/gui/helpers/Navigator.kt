@@ -53,6 +53,7 @@ import org.videolan.vlc.gui.BaseFragment
 import org.videolan.vlc.gui.MainActivity
 import org.videolan.vlc.gui.MoreFragment
 import org.videolan.vlc.gui.PlaylistFragment
+import org.videolan.vlc.gui.M3UPlaylistFragment
 import org.videolan.vlc.gui.audio.AudioBrowserFragment
 import org.videolan.vlc.gui.browser.BaseBrowserFragment
 import org.videolan.vlc.gui.browser.MainBrowserFragment
@@ -84,11 +85,16 @@ class Navigator : NavigationBarView.OnItemSelectedListener, DefaultLifecycleObse
         }
         lifecycle.addObserver(this@Navigator)
         navigationView = listOf(findViewById(R.id.navigation), findViewById(R.id.navigation_rail))
+        // M3U-centric UI: only the "Video" and "More" screens are shown
+        navigationView.forEach { v ->
+            v.menu.findItem(R.id.nav_directories)?.isVisible = false
+            v.menu.findItem(R.id.nav_playlists)?.isVisible = false
+        }
         appbarLayout = findViewById(R.id.appbar)
     }
 
     override fun onStart(owner: LifecycleOwner) {
-        if (currentFragment === null && !currentIdIsExtension()) showFragment(if (currentFragmentId != 0) currentFragmentId else settings.getInt(KEY_FRAGMENT_ID, defaultFragmentId))
+        if (currentFragment === null && !currentIdIsExtension()) showFragment(if (currentFragmentId != 0) currentFragmentId else R.id.nav_video)
         navigationView.forEach { it.setOnItemSelectedListener(this) }
     }
 
@@ -103,7 +109,7 @@ class Navigator : NavigationBarView.OnItemSelectedListener, DefaultLifecycleObse
             }
             R.id.nav_playlists -> PlaylistFragment()
             R.id.nav_more -> MoreFragment()
-            else -> VideoBrowserFragment()
+            else -> M3UPlaylistFragment()
         }
     }
 

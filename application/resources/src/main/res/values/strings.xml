@@ -796,6 +796,10 @@
     <string name="episodes">episodes</string>
     <string name="movies">movies</string>
     <string name="videos">videos</string>
+    <string name="local_m3u">选择本地 M3U 文件</string>
+    <string name="local_m3u_hint">从设备中选择一个 .m3u 播放列表</string>
+    <string name="url_m3u">输入 M3U 链接</string>
+    <string name="url_m3u_hint">粘贴 m3u 地址，如 http://….m3u</string>
     <string name="default_action_videos">Videos</string>
     <string name="videos_all">All videos</string>
     <string name="clear_playback_history">Clear playback history</string>
