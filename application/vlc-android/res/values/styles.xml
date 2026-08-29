@@ -41,6 +41,7 @@
         <!-- iOS Design System : light surfaces -->
         <item name="background_default">@color/iosSecondarySystemGroupedBackgroundLight</item>
         <item name="bottom_navigation_background">@drawable/bottom_navigation_background</item>
+        <item name="bottom_navigation_float_background">@drawable/bottom_navigation_float</item>
         <item name="audio_header_background">@color/iosCardBackground</item>
         <item name="audio_header_divider">@color/iosSeparatorLight</item>
         <item name="default_divider">@color/black_transparent_20</item>
@@ -236,6 +237,7 @@
         <!-- iOS Design System : dark surfaces -->
         <item name="background_default">@color/iosSystemBackgroundDark</item>
         <item name="bottom_navigation_background">@drawable/bottom_navigation_background_dark</item>
+        <item name="bottom_navigation_float_background">@drawable/bottom_navigation_float_dark</item>
         <item name="audio_header_background">@color/iosSecondarySystemBackgroundDark</item>
         <item name="audio_header_divider">@color/iosSeparatorDark</item>
         <item name="default_divider">@color/white_transparent_20</item>

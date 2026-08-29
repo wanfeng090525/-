@@ -27,6 +27,7 @@
     <attr name="background_default" format="reference|color" />
     <attr name="header_background" format="reference|color" />
     <attr name="bottom_navigation_background" format="reference|color" />
+    <attr name="bottom_navigation_float_background" format="reference|color" />
     <attr name="audio_header_background" format="reference|color" />
     <attr name="audio_header_divider" format="color" />
     <attr name="default_divider" format="color" />
