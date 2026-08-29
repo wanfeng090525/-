@@ -117,6 +117,8 @@ class Navigator : NavigationBarView.OnItemSelectedListener, DefaultLifecycleObse
         val fm = activity.supportFragmentManager
         if (currentFragment is BaseBrowserFragment) fm.popBackStackImmediate("root", FragmentManager.POP_BACK_STACK_INCLUSIVE)
         val ft = fm.beginTransaction()
+        // iOS-style smooth cross-fade when switching bottom-tab screens
+        ft.setCustomAnimations(R.anim.fade_in_ios, R.anim.fade_out_ios)
         ft.replace(R.id.fragment_placeholder, fragment, tag)
         if (BuildConfig.DEBUG) ft.commit()
         else ft.commitAllowingStateLoss()
