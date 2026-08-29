@@ -51,7 +51,7 @@ import org.videolan.vlc.BuildConfig
 import org.videolan.vlc.R
 import org.videolan.vlc.gui.BaseFragment
 import org.videolan.vlc.gui.MainActivity
-import org.videolan.vlc.gui.MoreFragment
+import org.videolan.vlc.gui.SettingsFragment
 import org.videolan.vlc.gui.PlaylistFragment
 import org.videolan.vlc.gui.M3UPlaylistFragment
 import org.videolan.vlc.gui.audio.AudioBrowserFragment
@@ -108,7 +108,7 @@ class Navigator : NavigationBarView.OnItemSelectedListener, DefaultLifecycleObse
                 arguments = bundleOf(EXTRA_FOR_ESPRESSO to forExpresso)
             }
             R.id.nav_playlists -> PlaylistFragment()
-            R.id.nav_more -> MoreFragment()
+            R.id.nav_more -> SettingsFragment()
             else -> M3UPlaylistFragment()
         }
     }

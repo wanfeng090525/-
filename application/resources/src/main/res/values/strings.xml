@@ -800,6 +800,13 @@
     <string name="local_m3u_hint">从设备中选择一个 .m3u 播放列表</string>
     <string name="url_m3u">输入 M3U 链接</string>
     <string name="url_m3u_hint">粘贴 m3u 地址，如 http://….m3u</string>
+    <string name="settings_label">设置</string>
+    <string name="m3u_my_channels">我的频道</string>
+    <string name="m3u_empty">暂无频道，点击右上角 ⚙ 导入 M3U</string>
+    <string name="import_choose_source">导入 M3U</string>
+    <string name="import_local">选择本地 M3U 文件</string>
+    <string name="import_remote">输入 M3U 链接</string>
+    <string name="import_failed">无法导入该 M3U 文件</string>
     <string name="default_action_videos">Videos</string>
     <string name="videos_all">All videos</string>
     <string name="clear_playback_history">Clear playback history</string>

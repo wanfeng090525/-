@@ -41,7 +41,7 @@
             android:icon="@drawable/ic_playlist" />
     <item
             android:id="@+id/nav_more"
-            android:title="@string/more"
+            android:title="@string/settings_label"
             android:icon="@drawable/ic_nav_more" />
 
 </menu>

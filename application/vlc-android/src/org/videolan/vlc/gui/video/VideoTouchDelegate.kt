@@ -91,6 +91,7 @@ class VideoTouchDelegate(private val player: VideoPlayerActivity,
     private var touchX = -1f
     private var verticalTouchActive = false
     private var middleSwipeAccumulated = 0f
+    private var videoSwitchDone = false
 
     private var lastMove: Long = 0
     private var savedRate: Float = 1f
@@ -180,6 +181,7 @@ class VideoTouchDelegate(private val player: VideoPlayerActivity,
                         touchDownMs = now
                         verticalTouchActive = false
                         middleSwipeAccumulated = 0f
+                        videoSwitchDone = false
                         // Audio
                         initTouchY = event.y
                         initTouchX = event.x
@@ -372,30 +374,30 @@ class VideoTouchDelegate(private val player: VideoPlayerActivity,
     }
 
     private fun doVerticalTouchAction(y_changed: Float) {
-        if (BuildConfig.DEBUG) Log.d(this::class.java.simpleName, "doVerticalTouchAction $y_changed // ${screenConfig.metrics.widthPixels} // ${3 * screenConfig.metrics.widthPixels / 7f} // $touchX")
-        val rightAction = touchX.toInt() > 5 * screenConfig.metrics.widthPixels / 8f
-        val leftAction = !rightAction && touchX.toInt() < 3 * screenConfig.metrics.widthPixels / 8f
-        if (!leftAction && !rightAction) {
-            // iOS-style gesture : vertical swipe in the neutral middle zone switches videos
-            // (volume = right third, brightness = left third, middle = next/previous)
-            if (touchAction == TOUCH_NONE && (player.service?.playlistManager?.getMediaList()?.size ?: 0) > 1) {
-                middleSwipeAccumulated += y_changed
-                val threshold = 72f
-                when {
-                    // finger moved up -> go to the next video
-                    middleSwipeAccumulated < -threshold -> {
-                        player.next()
-                        touchAction = TOUCH_IGNORE
-                    }
-                    // finger moved down -> go to the previous video
-                    middleSwipeAccumulated > threshold -> {
-                        player.previous()
-                        touchAction = TOUCH_IGNORE
-                    }
+        if (BuildConfig.DEBUG) Log.d(this::class.java.simpleName, "doVerticalTouchAction $y_changed // ${screenConfig.metrics.widthPixels} // $touchX")
+        // M3U-centric gesture: any vertical swipe switches videos when more than one item is loaded
+        val listSize = player.service?.playlistManager?.getMediaList()?.size ?: 0
+        if (listSize > 1 && !videoSwitchDone) {
+            middleSwipeAccumulated += y_changed
+            val threshold = 72f
+            when {
+                // finger moved up -> go to the next video
+                middleSwipeAccumulated < -threshold -> {
+                    player.next()
+                    videoSwitchDone = true
+                    touchAction = TOUCH_IGNORE
+                }
+                // finger moved down -> go to the previous video
+                middleSwipeAccumulated > threshold -> {
+                    player.previous()
+                    videoSwitchDone = true
+                    touchAction = TOUCH_IGNORE
                 }
             }
             return
         }
+        val rightAction = touchX.toInt() > 5 * screenConfig.metrics.widthPixels / 8f
+        val leftAction = !rightAction && touchX.toInt() < 3 * screenConfig.metrics.widthPixels / 8f
         val audio = touchControls and TOUCH_FLAG_AUDIO_VOLUME != 0
         val brightness = touchControls and TOUCH_FLAG_BRIGHTNESS != 0
         if (BuildConfig.DEBUG) Log.d(this::class.java.simpleName, "doVerticalTouchAction brightness: $brightness // $leftAction")

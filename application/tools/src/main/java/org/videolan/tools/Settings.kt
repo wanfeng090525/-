@@ -113,7 +113,7 @@ object Settings : SingletonHolder<SharedPreferences, Context>({ init(it.applicat
     )
 
     val showTvUi : Boolean
-        get() = !overrideTvUI && device.isTv || tvUI
+        get() = false
 }
 
 const val KEY_CURRENT_SETTINGS_VERSION = "current_settings_version"
