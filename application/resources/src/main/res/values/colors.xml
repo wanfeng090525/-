@@ -235,15 +235,6 @@
     <!-- iOS tint used for tinted buttons (10% system blue) -->
     <color name="iosAccentTint">#1A007AFF</color>
 
-    <!-- ================================================================
-         Missing legacy tokens now resolved (keep the resource graph valid)
-         ================================================================ -->
-    <color name="list_title">@color/iosLabelLight</color>
-    <color name="list_subtitle">@color/iosSecondaryLabelLight</color>
-    <color name="list_title_dark">@color/iosLabelDark</color>
-    <color name="list_subtitle_dark">@color/iosSecondaryLabelDark</color>
-    <color name="dialog_circle_background">@color/iosCardBackground</color>
-    <color name="dialog_circle_background_dark">@color/iosSecondarySystemBackgroundDark</color>
-    <color name="simple_list_title_tv">#F2F2F7</color>
+    <!-- referenced by the TV theme (vlc-android/res/values/styles.xml) but not defined elsewhere -->
     <color name="lb_basic_card_content_text_color">#B2B3C4</color>
 </resources>
