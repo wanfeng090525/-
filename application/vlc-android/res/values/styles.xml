@@ -883,6 +883,18 @@
         <item name="android:colorControlActivated">@color/iosGreenLight</item>
     </style>
 
+    <!-- OrangeTV / APTV-style category capsule chip -->
+    <style name="Widget.VLC.Chip.APTV" parent="@style/Widget.MaterialComponents.Chip.Filter">
+        <item name="chipBackgroundColor">@color/aptv_chip_background</item>
+        <item name="chipStrokeColor">@color/iosSeparatorOpacityDark</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/aptv_chip_text</item>
+        <item name="chipCornerRadius">10dp</item>
+        <item name="chipMinHeight">36dp</item>
+        <item name="rippleColor">@color/iosAccentTint</item>
+        <item name="ensureMinTouchTargetSize">false</item>
+    </style>
+
     <style name="VLCCardView.NoShadow">
         <item name="cardElevation">0dp</item>
         <item name="strokeWidth">1dp</item>

@@ -1,66 +1,122 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ *************************************************************************
-  ~  main_browser_fragment.xml
-  ~ **************************************************************************
-  ~ Copyright © 2020 VLC authors and VideoLAN
-  ~ Author: Nicolas POMEPUY
-  ~ This program is free software; you can redistribute it and/or modify
-  ~ it under the terms of the GNU General Public License as published by
-  ~ the Free Software Foundation; either version 2 of the License, or
-  ~ (at your option) any later version.
-  ~
-  ~ This program is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU General Public License
-  ~ along with this program; if not, write to the Free Software
-  ~ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
-  ~ ***************************************************************************
-  ~
-  ~
-  -->
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?attr/background_default">
+        android:background="?attr/background_default"
+        android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
-        <org.videolan.vlc.gui.view.TitleListView
-                android:id="@+id/fav_browser_entry"
-                app:title="@string/favorites"
+        <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="22dp"
+                android:paddingBottom="24dp"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent">
 
-        <org.videolan.vlc.gui.view.TitleListView
-                android:id="@+id/local_browser_entry"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fav_browser_entry"
-                app:title="@string/browser_storages" />
+            <!-- APTV-style large library title -->
+            <TextView
+                    android:id="@+id/aptv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VLC"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="-0.005"
+                    android:textColor="?android:attr/textColorPrimary" />
 
-        <org.videolan.vlc.gui.view.TitleListView
-                android:id="@+id/network_browser_entry"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/local_browser_entry"
-                app:title="@string/network_browsing" />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Media Library"
+                    android:textSize="15sp"
+                    android:textColor="?android:attr/textColorSecondary" />
 
+            <!-- Category capsule row -->
+            <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:scrollbars="none"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never">
 
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <com.google.android.material.chip.Chip
+                            style="@style/Widget.VLC.Chip.APTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:checkable="true"
+                            android:checked="true"
+                            android:text="@string/favorites" />
+
+                    <com.google.android.material.chip.Chip
+                            style="@style/Widget.VLC.Chip.APTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:checkable="true"
+                            android:text="@string/browser_storages" />
+
+                    <com.google.android.material.chip.Chip
+                            style="@style/Widget.VLC.Chip.APTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:checkable="true"
+                            android:text="@string/network_browsing" />
+
+                    <com.google.android.material.chip.Chip
+                            style="@style/Widget.VLC.Chip.APTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:checkable="true"
+                            android:text="@string/video" />
+
+                    <com.google.android.material.chip.Chip
+                            style="@style/Widget.VLC.Chip.APTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:text="@string/audio" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <org.videolan.vlc.gui.view.TitleListView
+                    android:id="@+id/fav_browser_entry"
+                    app:title="@string/favorites"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp" />
+
+            <org.videolan.vlc.gui.view.TitleListView
+                    android:id="@+id/local_browser_entry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:title="@string/browser_storages" />
+
+            <org.videolan.vlc.gui.view.TitleListView
+                    android:id="@+id/network_browser_entry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:title="@string/network_browsing" />
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
