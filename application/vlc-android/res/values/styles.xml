@@ -895,6 +895,17 @@
         <item name="ensureMinTouchTargetSize">false</item>
     </style>
 
+    <!-- OrangeTV / APTV-style search pill -->
+    <style name="Button.VLC.Search.APTV" parent="@style/Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:paddingStart">28dp</item>
+        <item name="android:paddingEnd">28dp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="strokeColor">@color/iosSeparatorDark</item>
+    </style>
+
     <style name="VLCCardView.NoShadow">
         <item name="cardElevation">0dp</item>
         <item name="strokeWidth">1dp</item>
