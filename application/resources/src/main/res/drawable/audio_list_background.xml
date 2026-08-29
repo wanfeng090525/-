@@ -23,11 +23,12 @@
   ~
   -->
 
+<!-- iOS Design System : grouped-table cell surface with a hairline stroke -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item  android:top="-2dp" android:bottom="-2dp" android:right="-2dp">
         <shape android:shape="rectangle">
-            <stroke android:width="1dp" android:color="@color/grey400" />
-            <solid android:color="@color/white_transparent_20" />
+            <stroke android:width="1dp" android:color="@color/iosSeparatorLight" />
+            <solid android:color="@color/iosCardBackground" />
         </shape>
     </item>
 </layer-list>

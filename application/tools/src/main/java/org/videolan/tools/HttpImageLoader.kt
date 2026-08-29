@@ -63,6 +63,8 @@ object HttpImageLoader {
                 val options = BitmapFactory.Options()
                 options.inJustDecodeBounds = true
                 BitmapFactory.decodeStream(inputStream, null, options)
+                // Always release the first connection before decoding the real payload
+                CloseableUtils.close(inputStream)
                 options.inJustDecodeBounds = false
 
                 //limit image to 150dp for the larger size
@@ -85,7 +87,12 @@ object HttpImageLoader {
                 urlConnection?.disconnect()
             }
         }.also {
-            jobsLocker.withLock { currentJobs[imageUrl]?.complete(it) }
+            jobsLocker.withLock {
+                currentJobs[imageUrl]?.complete(it)
+                // Drop the completed deferred so an unbounded number of unique URLs
+                // cannot grow the in-memory job map indefinitely.
+                currentJobs.remove(imageUrl)
+            }
         }
     }
 }

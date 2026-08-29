@@ -38,10 +38,11 @@
 
 
         <item name="actionModeBackground">@color/action_mode_light</item>
-        <item name="background_default">@color/white</item>
+        <!-- iOS Design System : light surfaces -->
+        <item name="background_default">@color/iosSecondarySystemGroupedBackgroundLight</item>
         <item name="bottom_navigation_background">@drawable/bottom_navigation_background</item>
-        <item name="audio_header_background">@color/white</item>
-        <item name="audio_header_divider">@color/grey400</item>
+        <item name="audio_header_background">@color/iosCardBackground</item>
+        <item name="audio_header_divider">@color/iosSeparatorLight</item>
         <item name="default_divider">@color/black_transparent_20</item>
         <item name="subtle_selection">@color/black_transparent_10</item>
         <item name="audio_menu_icon">@color/black_transparent_50</item>
@@ -51,24 +52,24 @@
         <item name="round_background">@drawable/round_background</item>
         <item name="bottom_sheet_background">@color/white</item>
         <item name="bookmark_background">@color/white_transparent_90</item>
-        <item name="bottom_sheet_radius">16dp</item>
-        <item name="bottom_navigation_color">@color/grey700</item>
-        <item name="header_background">@color/whitetransparent_ea</item>
-        <item name="background_default_darker">@color/grey200</item>
-        <item name="background_actionbar">@color/white</item>
+        <item name="bottom_sheet_radius">12dp</item>
+        <item name="bottom_navigation_color">@color/iosGrayLight</item>
+        <item name="header_background">@color/iosSystemBackgroundLight</item>
+        <item name="background_default_darker">@color/iosGray6Light</item>
+        <item name="background_actionbar">@color/iosCardBackground</item>
         <item name="audio_player_background_tint">@color/white_transparent_75</item>
         <item name="background_audio_tips">@color/white_transparent_95</item>
-        <item name="audio_browser_separator">@color/orange800</item>
+        <item name="audio_browser_separator">@color/iosAccent</item>
         <item name="dialog_circle_background">@color/dialog_circle_background</item>
-        <item name="font_default">@color/grey900</item>
-        <item name="font_light">@color/grey700</item>
+        <item name="font_default">@color/iosLabelLight</item>
+        <item name="font_light">@color/iosGrayLight</item>
         <item name="font_disabled">@color/grey700transparent</item>
         <item name="font_audio_light">@color/grey700</item>
         <item name="list_subtitle">@color/list_subtitle</item>
         <item name="list_title">@color/list_title</item>
         <item name="donate_card">@color/orange500</item>
         <item name="donate_item_background">@drawable/donate_background_color</item>
-        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowBackground">@color/iosSystemGroupedBackgroundLight</item>
         <item name="audio_chips_color">@color/black_transparent_75</item>
         <item name="audio_chips_text_color">@color/white_transparent_60</item>
         <item name="bottom_navigation_focus">@color/orange_800_transparent_10</item>
@@ -90,8 +91,8 @@
         <item name="ariane_text_color">@color/grey700</item>
         <item name="ariane_text_size">14sp</item>
         <item name="player_icon_color">@color/black</item>
-        <item name="card_background">@color/white</item>
-        <item name="default_separator">@color/grey300</item>
+        <item name="card_background">@color/iosCardBackground</item>
+        <item name="default_separator">@color/iosSeparatorLight</item>
         <item name="empty_button">@style/Widget.MaterialComponents.Button.OutlinedButton</item>
         <item name="card_border">@color/grey300</item>
         <item name="empty_foreground">@color/grey300</item>
@@ -232,10 +233,11 @@
         <item name="actionModeTheme">@style/ThemeOverlay.ActionMode.Dark</item>
         <item name="actionModeStyle">@style/ActionMode.Dark</item>
         <item name="actionModeBackground">@color/action_mode_dark</item>
-        <item name="background_default">@color/dark_background</item>
+        <!-- iOS Design System : dark surfaces -->
+        <item name="background_default">@color/iosSystemBackgroundDark</item>
         <item name="bottom_navigation_background">@drawable/bottom_navigation_background_dark</item>
-        <item name="audio_header_background">@color/mini_player_dark</item>
-        <item name="audio_header_divider">@color/black</item>
+        <item name="audio_header_background">@color/iosSecondarySystemBackgroundDark</item>
+        <item name="audio_header_divider">@color/iosSeparatorDark</item>
         <item name="default_divider">@color/white_transparent_20</item>
         <item name="subtle_selection">@color/white_transparent_10</item>
         <item name="audio_menu_icon">@color/white_transparent_50</item>
@@ -243,26 +245,26 @@
         <item name="audio_seek_bar">@drawable/audio_seekbar_black</item>
         <item name="mini_visualizer_color">@color/white_transparent_75</item>
         <item name="round_background">@drawable/round_background_dark</item>
-        <item name="bottom_sheet_background">@color/grey875</item>
+        <item name="bottom_sheet_background">@color/iosGray5Dark</item>
         <item name="bookmark_background">@color/black_transparent_80</item>
-        <item name="bottom_sheet_radius">16dp</item>
-        <item name="bottom_navigation_color">@color/grey500</item>
-        <item name="header_background">@color/dark_background</item>
-        <item name="background_default_darker">@color/grey875</item>
-        <item name="background_actionbar">@color/dark_background</item>
+        <item name="bottom_sheet_radius">12dp</item>
+        <item name="bottom_navigation_color">@color/iosGrayDark</item>
+        <item name="header_background">@color/iosSystemBackgroundDark</item>
+        <item name="background_default_darker">@color/iosGray6Dark</item>
+        <item name="background_actionbar">@color/iosSystemBackgroundDark</item>
         <item name="background_audio_tips">@color/black_transparent_90</item>
         <item name="audio_player_background_tint">@color/black_transparent_50</item>
-        <item name="audio_browser_separator">@color/orange500</item>
+        <item name="audio_browser_separator">@color/iosBlueDark</item>
         <item name="dialog_circle_background">@color/dialog_circle_background_dark</item>
-        <item name="font_default">@color/grey50</item>
-        <item name="font_light">@color/grey600</item>
+        <item name="font_default">@color/iosLabelDark</item>
+        <item name="font_light">@color/iosGrayDark</item>
         <item name="font_disabled">@color/grey600transparent</item>
         <item name="font_audio_light">@color/grey400</item>
         <item name="list_subtitle">@color/list_subtitle_dark</item>
         <item name="list_title">@color/list_title_dark</item>
         <item name="donate_card">@color/orange500transparent</item>
         <item name="donate_item_background">@drawable/donate_background_color_dark</item>
-        <item name="android:windowBackground">@color/dark_background</item>
+        <item name="android:windowBackground">@color/iosSystemGroupedBackgroundDark</item>
         <item name="audio_chips_color">@color/white_transparent_90</item>
         <item name="audio_chips_text_color">@color/black_transparent_60</item>
         <item name="bottom_navigation_focus">@color/white_transparent_10</item>
@@ -284,8 +286,8 @@
         <item name="ariane_text_color">@color/grey50</item>
         <item name="ariane_text_size">14sp</item>
         <item name="player_icon_color">@color/white</item>
-        <item name="card_background">@color/black</item>
-        <item name="default_separator">@color/grey700</item>
+        <item name="card_background">@color/iosSecondarySystemBackgroundDark</item>
+        <item name="default_separator">@color/iosGray4Dark</item>
         <item name="empty_button">@style/Widget.MaterialComponents.Button.OutlinedButton</item>
 
         <item name="card_border">@color/grey800</item>
@@ -596,14 +598,14 @@
     </style>
 
     <style name="VLC.TextViewTitle" parent="VLC.TextView">
-        <item name="android:textSize">@dimen/audio_item_title_size</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:textColor">?attr/list_title</item>
         <item name="android:maxLines">2</item>
         <item name="android:lineSpacingMultiplier">1.1</item>
     </style>
 
     <style name="VLC.TextViewDescription" parent="VLC.TextView">
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">13sp</item>
         <item name="android:textColor">?attr/list_subtitle</item>
         <item name="android:singleLine">true</item>
         <item name="android:maxLines">1</item>
@@ -797,12 +799,64 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="ToolbarTitleText" parent="@style/TextAppearance.MaterialComponents.Headline6">
-        <item name="android:textColor">?attr/colorControlNormal</item>
+    <!-- iOS Design System : typography scale (SF Pro ~ mapped to the system sans-serif)
+         Large Title = 34 / Title 2 = 22 / Title 3 = 20 / Headline = 17
+         Body = 17 / Callout = 16 / Subhead = 15 / Footnote = 13 / Caption = 12 -->
+    <style name="TextAppearance.VLC.iOS.LargeTitle" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">34sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.0037</item>
+        <item name="android:textColor">?attr/font_default</item>
+    </style>
+
+    <style name="TextAppearance.VLC.iOS.Title2" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.0035</item>
+        <item name="android:textColor">?attr/font_default</item>
+    </style>
+
+    <style name="TextAppearance.VLC.iOS.Title3" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/font_default</item>
+    </style>
+
+    <style name="TextAppearance.VLC.iOS.Headline" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/font_default</item>
+    </style>
+
+    <style name="TextAppearance.VLC.iOS.Body" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">?attr/font_default</item>
+    </style>
+
+    <style name="TextAppearance.VLC.iOS.Subhead" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">?attr/font_light</item>
+    </style>
+
+    <style name="TextAppearance.VLC.iOS.Footnote" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">?attr/font_light</item>
+    </style>
+
+    <style name="TextAppearance.VLC.iOS.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?attr/font_light</item>
+    </style>
+
+    <style name="ToolbarTitleText" parent="@style/TextAppearance.VLC.iOS.Headline">
+        <item name="android:textColor">?attr/font_default</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.0014</item>
     </style>
 
     <style name="VLCCardView" parent="@style/Widget.MaterialComponents.CardView">
-        <item name="cardCornerRadius">4dp</item>
+        <!-- iOS Design System : rounded card (UITableView / App Store card look) -->
+        <item name="cardCornerRadius">10dp</item>
         <item name="background">?attr/card_background</item>
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
         <item name="android:clickable">true</item>

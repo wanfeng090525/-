@@ -22,15 +22,16 @@
   ~
   ~
   -->
+<!-- iOS Design System : flat UITabBar with a 0.5pt top hairline separator -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="@color/grey300" />
+            <solid android:color="@color/iosSeparatorLight" />
         </shape>
     </item>
     <item android:top="1dp">
         <shape android:shape="rectangle">
-            <solid android:color="@color/white" />
+            <solid android:color="@color/iosCardBackground" />
         </shape>
     </item>
 </layer-list>

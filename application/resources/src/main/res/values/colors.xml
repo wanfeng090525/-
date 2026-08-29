@@ -6,19 +6,21 @@
     <color name="red">#bb0000</color>
 
 <!--
-    Material color swatches
-    The main color is always xxx500
+    iOS Design System
+    The canonical VLC orange accent has been re-mapped to the iOS system blue,
+    so every accent in the app now follows the Apple Human Interface Guideline.
+    The main color is always xxx500.
 -->
-    <color name="orange50">#fff3e0</color>
-    <color name="orange100">#ffdfae</color>
-    <color name="orange200">#ffca7d</color>
-    <color name="orange300">#ffb54c</color>
-    <color name="orange400">#ffa11a</color>
-    <color name="orange500">#FF8800</color>
-    <color name="orange600">#ff7d00</color>
-    <color name="orange700">#ff7200</color>
-    <color name="orange800">#ff610a</color>
-    <color name="orange900">#ff5014</color>
+    <color name="orange50">#F0F6FF</color>
+    <color name="orange100">#D8E9FF</color>
+    <color name="orange200">#B2CEFF</color>
+    <color name="orange300">#87AFFF</color>
+    <color name="orange400">#3E8DFF</color>
+    <color name="orange500">#0A84FF</color>
+    <color name="orange600">#0078F0</color>
+    <color name="orange700">#006BE0</color>
+    <color name="orange800">#007AFF</color>
+    <color name="orange900">#005DCC</color>
 
     <color name="red500transparent_10">#1aff0000</color>
     <color name="red500transparent25">#40ff0000</color>
@@ -129,4 +131,104 @@
     <color name="onboarding_grey_transparent_75">#BF011422</color>
     <color name="material_blue">#2196f3</color>
     <color name="material_pink">#e91e63</color>
+
+    <!-- ================================================================
+         iOS Design System palette (Apple Human Interface Guidelines)
+         ================================================================ -->
+
+    <!-- Dynamic system colors (light) -->
+    <color name="iosBlueLight">#007AFF</color>
+    <color name="iosGreenLight">#34C759</color>
+    <color name="iosIndigoLight">#5856D6</color>
+    <color name="iosOrangeLight">#FF9500</color>
+    <color name="iosPinkLight">#FF2D55</color>
+    <color name="iosPurpleLight">#AF52DE</color>
+    <color name="iosRedLight">#FF3B30</color>
+    <color name="iosTealLight">#5AC8FA</color>
+    <color name="iosYellowLight">#FFCC00</color>
+
+    <!-- Dynamic system colors (dark) -->
+    <color name="iosBlueDark">#0A84FF</color>
+    <color name="iosGreenDark">#30D158</color>
+    <color name="iosIndigoDark">#5E5CE6</color>
+    <color name="iosOrangeDark">#FF9F0A</color>
+    <color name="iosPinkDark">#FF375F</color>
+    <color name="iosPurpleDark">#BF5AF2</color>
+    <color name="iosRedDark">#FF453A</color>
+    <color name="iosTealDark">#64D2FF</color>
+    <color name="iosYellowDark">#FFD60A</color>
+
+    <!-- iOS grays (light) -->
+    <color name="iosGrayLight">#8E8E93</color>
+    <color name="iosGray2Light">#AEAEB2</color>
+    <color name="iosGray3Light">#C7C7CC</color>
+    <color name="iosGray4Light">#D1D1D6</color>
+    <color name="iosGray5Light">#E5E5EA</color>
+    <color name="iosGray6Light">#F2F2F7</color>
+
+    <!-- iOS grays (dark) -->
+    <color name="iosGrayDark">#8E8E93</color>
+    <color name="iosGray2Dark">#636366</color>
+    <color name="iosGray3Dark">#48484A</color>
+    <color name="iosGray4Dark">#3A3A3C</color>
+    <color name="iosGray5Dark">#2C2C2E</color>
+    <color name="iosGray6Dark">#1C1C1E</color>
+
+    <!-- iOS labels & separators (light) -->
+    <color name="iosLabelLight">#000000</color>
+    <color name="iosSecondaryLabelLight">#3C3C43</color>
+    <color name="iosTertiaryLabelLight">#3C3C43</color>
+    <color name="iosQuaternaryLabelLight">#8E8E93</color>
+    <color name="iosSeparatorLight">#C6C6C8</color>
+    <color name="iosOpaqueSeparatorLight">#C6C6C8</color>
+    <color name="iosSystemFillLight">#78FFFFFF</color>
+    <color name="iosSecondarySystemFillLight">#40FFFFFF</color>
+    <color name="iosTertiarySystemFillLight">#26FFFFFF</color>
+
+    <!-- iOS labels & separators (dark) -->
+    <color name="iosLabelDark">#FFFFFF</color>
+    <color name="iosSecondaryLabelDark">#EBEBF5</color>
+    <color name="iosTertiaryLabelDark">#EBEBF5</color>
+    <color name="iosQuaternaryLabelDark">#98989E</color>
+    <color name="iosSeparatorDark">#38383A</color>
+    <color name="iosOpaqueSeparatorDark">#48484A</color>
+    <color name="iosSystemFillDark">#52FFFFFF</color>
+    <color name="iosSecondarySystemFillDark">#28FFFFFF</color>
+    <color name="iosTertiarySystemFillDark">#1AFFFFFF</color>
+
+    <!-- iOS surfaces (light) -->
+    <color name="iosSystemBackgroundLight">#FFFFFF</color>
+    <color name="iosSecondarySystemBackgroundLight">#FFFFFF</color>
+    <color name="iosTertiarySystemBackgroundLight">#FFFFFF</color>
+    <color name="iosSystemGroupedBackgroundLight">#F2F2F7</color>
+    <color name="iosSecondarySystemGroupedBackgroundLight">#FFFFFF</color>
+    <color name="iosTertiarySystemGroupedBackgroundLight">#F2F2F7</color>
+    <color name="iosElevatedSystemBackgroundLight">#FFFFFF</color>
+
+    <!-- iOS surfaces (dark) -->
+    <color name="iosSystemBackgroundDark">#000000</color>
+    <color name="iosSecondarySystemBackgroundDark">#1C1C1E</color>
+    <color name="iosTertiarySystemBackgroundDark">#2C2C2E</color>
+    <color name="iosSystemGroupedBackgroundDark">#000000</color>
+    <color name="iosSecondarySystemGroupedBackgroundDark">#1C1C1E</color>
+    <color name="iosTertiarySystemGroupedBackgroundDark">#2C2C2E</color>
+    <color name="iosElevatedSystemBackgroundDark">#1C1C1E</color>
+
+    <!-- Semantic aliases used by the theme (light / dark) -->
+
+    <!-- Light theme aliases -->
+    <color name="iosGroupedBackground">@color/iosSystemGroupedBackgroundLight</color>
+    <color name="iosCardBackground">@color/iosSecondarySystemGroupedBackgroundLight</color>
+    <color name="iosSeparator">@color/iosSeparatorLight</color>
+    <color name="iosLabel">@color/iosLabelLight</color>
+    <color name="iosSecondaryLabel">@color/iosSecondaryLabelLight</color>
+    <color name="iosAccent">@color/iosBlueLight</color>
+
+    <!-- Dark theme aliases -->
+    <color name="iosGroupedBackgroundDark">@color/iosSystemGroupedBackgroundDark</color>
+    <color name="iosCardBackgroundDark">@color/iosSecondarySystemGroupedBackgroundDark</color>
+    <color name="iosSeparatorDarkAlias">@color/iosSeparatorDark</color>
+    <color name="iosLabelDarkAlias">@color/iosLabelDark</color>
+    <color name="iosSecondaryLabelDarkAlias">@color/iosSecondaryLabelDark</color>
+    <color name="iosAccentDark">@color/iosBlueDark</color>
 </resources>
