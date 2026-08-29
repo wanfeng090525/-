@@ -877,11 +877,10 @@
         <item name="android:paddingRight">20dp</item>
     </style>
 
-    <!-- iOS Switch : green on-state, gray thumb off-state -->
+    <!-- iOS Switch : green on-state -->
     <style name="Widget.VLC.Switch.iOS" parent="@style/Widget.AppCompat.CompoundButton.Switch">
         <item name="android:textSize">17sp</item>
         <item name="android:colorControlActivated">@color/iosGreenLight</item>
-        <item name="android:colorSwitchThumbNormal">@color/iosGray4Light</item>
     </style>
 
     <style name="VLCCardView.NoShadow">
